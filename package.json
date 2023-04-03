@@ -1,0 +1,30 @@
+{
+  "name": "cabis-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "env-cmd -f ./environments/prod.env node src/index.js",
+    "dev": "env-cmd -f ./environments/dev.env nodemon src/index.js",
+    "deploy": "rsync -r src username@host:directory"
+  },
+  "dependencies": {
+    "@lyrasearch/lyra": "^0.4.5",
+    "@lyrasearch/plugin-data-persistence": "^0.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.2",
+    "express-form-data": "^2.0.19",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.0",
+    "mongoose-paginate-v2": "^1.7.1",
+    "socket.io": "^4.5.4",
+    "web-push": "^3.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
