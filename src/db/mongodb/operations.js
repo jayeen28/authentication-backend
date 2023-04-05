@@ -12,7 +12,6 @@ const models = require('./models');
  *     - select (string): A space-separated string of fields to select.
  *   - query (Object): An object with key-value pairs representing queries to filter the search by.
  *     - sortBy (string): A string in the format "field:order", where "field" is the field to sort by and "order" is either "asc" or "desc".
- *     - search (string): A string to search for in the collection.
  *     - page (number): The page number to return.
  *     - limit (number): The number of documents per page.
  *     - Any field of the provided table if allowed.
@@ -21,10 +20,10 @@ const models = require('./models');
  * const result = await find({
  *   table: 'users',
  *   key: {
- *     allowedQuery: new Set(['sortBy', 'search']),
+ *     allowedQuery: new Set(['sortBy']),
  *     paginate: true,
  *     populate: { path: 'profile', select: 'name' },
- *     query: { sortBy: 'name:asc', search: 'john', page: 2, limit: 10 }
+ *     query: { sortBy: 'name:asc', page: 2, limit: 10 }
  *   }
  * });
  */
